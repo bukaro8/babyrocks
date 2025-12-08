@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# If you collect static into a folder called /static/ (uncomment if needed)
+# static/
+
+# VS Code
+.vscode/
+
+# IDEs
+.idea/
+*.swp
+
+# MacOS
+.DS_Store
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
