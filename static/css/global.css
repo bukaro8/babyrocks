@@ -1,0 +1,7 @@
+/* .list-menu .dropdown-item:hover,
+.list-menu .dropdown-item:focus {
+  color: var(--bs-success) !important;
+}
+.hover-success:hover {
+  color: var(--bs-success, #28a745) !important;
+} */
