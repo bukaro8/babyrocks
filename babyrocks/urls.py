@@ -25,6 +25,19 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('cart/', include('carts.urls')),
     path('store/', include('store.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# urlpatterns = [
+#     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+#     path('securelogin/', admin.site.urls),
+#     path('', views.home, name='home'),
+#     path('store/', include('store.urls')),
+#     path('cart/', include('carts.urls')),
+#     path('accounts/', include('accounts.urls')),
+
+#     # ORDERS
+#     path('orders/', include('orders.urls')),
+# ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
