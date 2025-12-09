@@ -4,7 +4,7 @@ from .models import Account, UserProfile
 from orders.models import Order, OrderProduct
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+
 
 # Verification email
 from django.contrib.sites.shortcuts import get_current_site
@@ -52,7 +52,7 @@ def register(request):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
-            # messages.success(request, 'Thank you for registering with us. We have sent you a verification email to your email address [rathan.kumar@gmail.com]. Please verify it.')
+
             return redirect('/accounts/login/?command=verification&email='+email)
     else:
         form = RegistrationForm()
@@ -108,7 +108,7 @@ def login(request):
                             for item in cart_item:
                                 item.user = user
                                 item.save()
-            except:
+            except:  # noqa: E722
                 pass
             auth.login(request, user)
             messages.success(request, 'You are now logged in.')
@@ -120,7 +120,7 @@ def login(request):
                 if 'next' in params:
                     nextPage = params['next']
                     return redirect(nextPage)
-            except:
+            except:  # noqa: E722
                 return redirect('dashboard')
         else:
             messages.error(request, 'Invalid login credentials')
