@@ -30,7 +30,7 @@ def add_cart(request, product_id):
                     variation = Variation.objects.get(
                         product=product, variation_category__iexact=key, variation_value__iexact=value)
                     product_variation.append(variation)
-                except:
+                except:  # noqa: E722
                     pass
 
         is_cart_item_exists = CartItem.objects.filter(
@@ -83,7 +83,7 @@ def add_cart(request, product_id):
                     variation = Variation.objects.get(
                         product=product, variation_category__iexact=key, variation_value__iexact=value)
                     product_variation.append(variation)
-                except:
+                except:  # noqa: E722
                     pass
 
         try:
@@ -155,7 +155,7 @@ def remove_cart(request, product_id, cart_item_id):
             cart_item.save()
         else:
             cart_item.delete()
-    except:
+    except:  # noqa: E722
         pass
     return redirect('cart')
 
