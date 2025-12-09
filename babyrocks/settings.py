@@ -17,6 +17,13 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# ----------------------------------------------------
+# Core settings
+# ----------------------------------------------------
+
+# SECRET_KEY = config('SECRET_KEY')
+# DEBUG = config('DEBUG', default=True, cast=bool)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -26,7 +33,7 @@ SECRET_KEY = 'django-insecure-_&aay6!3eauboo)5bha=+w*)hb%@4$q+8#)1tub0#yh^)oq0ij
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
