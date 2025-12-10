@@ -58,6 +58,11 @@
 
     {% block extra_style %} {% endblock extra_style %}
 
+<!-- PayPal Script -->
+<!-- PayPal Script -->
+<script src="https://www.paypal.com/sdk/js?client-id=AbPFvXX4SrIABZMauBQ4B-QHXry7RwAeQ6F9kGeulW7AmN9TXV9YgWKXAQTggvmEPbiC_K6-6QuJf_JL&currency=GBP"></script>
+
+
     <!-- custom javascript -->
     <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 
@@ -72,10 +77,15 @@
     </script>
   </head>
   <body>
-    {% include 'includes/navbar.html' %}
     <!-- section-header.// -->
-    {% block content %} {% endblock content %}
+    {% include 'includes/navbar.html' %}
+    {% block content %}
+    {% comment %} content {% endcomment %}
+    {% endblock content %}
     <br />
-    {% include 'includes/footer.html'%}
   </body>
+  <footer>
+
+    {% include 'includes/footer.html'%}
+  </footer>
 </html>
