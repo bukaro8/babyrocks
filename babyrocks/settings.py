@@ -39,11 +39,21 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
 # Tell Django it is behind a proxy (Traefik)
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# -------------------------------
+# Reverse proxy / SSL settings
+# -------------------------------
+
+# Trust the proxy (Traefik) for HTTPS information
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 USE_X_FORWARDED_HOST = True
+
+# Do NOT force HTTPS yourself. Traefik handles it.
+SECURE_SSL_REDIRECT = False
+
+# Needed for Django 6 behind HTTPS
 CSRF_TRUSTED_ORIGINS = [
-    "https://babyrocks.vicstack.uk",
+    'https://babyrocks.vicstack.uk',
 ]
 
 # Application definition
