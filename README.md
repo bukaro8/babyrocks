@@ -2,7 +2,7 @@
 
 
 
-````markdown
+
 # 🛍️ BabyRocks — e-Commerce Platform  
 ![BabyRocks Banner](./docs/images/banner.png)
 
@@ -234,4 +234,4 @@ You may also include Lighthouse scores or responsive test results.
 
 ```
 
----
+
