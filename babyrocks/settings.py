@@ -38,7 +38,13 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+# Tell Django it is behind a proxy (Traefik)
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
+USE_X_FORWARDED_HOST = True
+CSRF_TRUSTED_ORIGINS = [
+    "https://babyrocks.vicstack.uk",
+]
 
 # Application definition
 
