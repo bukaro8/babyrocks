@@ -200,24 +200,7 @@ babyrocks/
 
 ---
 
-## 🧪 Testing (Optional Future Section)
 
-*This section can include:*
-
-* Django unit tests
-* Functional tests for checkout flow
-* Admin tests
-* Screenshot tests for UI regressions
-
-You may also include Lighthouse scores or responsive test results.
-
----
-
-## 🐛 Known Issues & Solutions (Optional)
-
-*Add later if needed.*
-
----
 
 ## 🙏 Credits
 
