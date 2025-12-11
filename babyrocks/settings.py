@@ -164,25 +164,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Where collectstatic will put all static files in production
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Extra static files directories
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    BASE_DIR / 'babyrocks' / 'static',
+    BASE_DIR / 'static',              # global /static
+    BASE_DIR / 'babyrocks' / 'static'  # app-level /babyrocks/static
 ]
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (uploaded images)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-
-# Always include project static folder
-STATICFILES_DIRS = [
-    BASE_DIR / "babyrocks/static",
-]
 
 
 MESSAGE_TAGS = {
