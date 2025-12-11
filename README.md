@@ -1,6 +1,6 @@
 
 
-# ✅ **BABYROCKS — FULL README.md (copy/paste ready)**
+
 
 ````markdown
 # 🛍️ BabyRocks — e-Commerce Platform  
