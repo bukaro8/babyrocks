@@ -3,6 +3,8 @@ from category.models import Category
 from django.urls import reverse
 from accounts.models import Account
 from django.db.models import Avg, Count
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -54,6 +56,8 @@ variation_category_choice = (
     ('color', 'color'),
     ('size', 'size'),
 )
+DEFAULT_COLOURS = ["Pink", "Blue", "Grey", "RED", "WHITE"]
+DEFAULT_SIZES = ["S", "M", "L", "XL"]
 
 
 class Variation(models.Model):
@@ -96,3 +100,31 @@ class ProductGallery(models.Model):
     class Meta:
         verbose_name = 'productgallery'
         verbose_name_plural = 'product gallery'
+
+
+@receiver(post_save, sender=Product)
+def create_default_variations(sender, instance, created, **kwargs):
+    """
+    Automatically create default colour and size variations
+    when a new Product is created.
+    """
+    if not created:
+        return
+
+    # Create default colours
+    for colour in DEFAULT_COLOURS:
+        Variation.objects.get_or_create(
+            product=instance,
+            variation_category="color",
+            variation_value=colour,
+            defaults={"is_active": True},
+        )
+
+    # Create default sizes
+    for size in DEFAULT_SIZES:
+        Variation.objects.get_or_create(
+            product=instance,
+            variation_category="size",
+            variation_value=size,
+            defaults={"is_active": True},
+        )
