@@ -15,8 +15,5 @@ urlpatterns = [
     path("orders/", include("orders.urls")),
 ]
 
-# ✅ In production, still serve media (self-hosted)
+# Serve uploaded media (works with DEBUG=False too)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# ✅ Force media serving regardless of DEBUG (self-hosted only)
-urlpatterns += static(settings.MEDIA_URL,
-                      document_root=settings.MEDIA_ROOT, show_indexes=False)
