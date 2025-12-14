@@ -174,7 +174,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (uploaded images)
-MEDIA_URL = "https://babyrocks.vicstack.uk/media/"
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 WHITENOISE_ROOT = MEDIA_ROOT
 
