@@ -17,3 +17,6 @@ urlpatterns = [
 
 # ✅ In production, still serve media (self-hosted)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# ✅ Force media serving regardless of DEBUG (self-hosted only)
+urlpatterns += static(settings.MEDIA_URL,
+                      document_root=settings.MEDIA_ROOT, show_indexes=False)
