@@ -250,13 +250,13 @@ babyrocks/
 | Cart update | Increased and decreased item quantity in the cart. | Cart quantity and totals update correctly. | Cart quantity and totals updated as expected. | Pass | 27/05/2026 |
 | Cart remove | Removed an item from the cart. | Item is removed and cart totals update correctly. | Item was removed and the cart reflected the updated total. | Pass | 27/05/2026 |
 | Checkout form | Completed the checkout billing form and submitted it. | Required fields validate and the payment review page loads. | Checkout form accepted valid details and loaded the payment review page. | Pass | 27/05/2026 |
-| PayPal success | Completed a PayPal payment using the checkout flow. | Payment is captured, order is recorded and confirmation page is shown. | Successful payment showed the order confirmation page with transaction details. | Pass | 27/05/2026 |
-| PayPal cancel/error | Cancelled or interrupted the PayPal payment flow. | User remains in the checkout/payment flow without a completed order. | Cancel/error path was checked and did not complete the order unexpectedly. | Pass | 27/05/2026 |
+| PayPal success | Completed a PayPal payment using the checkout flow. | Payment is captured, order is recorded and confirmation page is shown. | Sandbox PayPal payment completed successfully and order confirmation page displayed. | Pass | 27/05/2026 |
+| PayPal cancel/error | Cancelled or interrupted the PayPal payment flow. | User remains in the checkout/payment flow without a completed order. | Payment cancellation showed the message: 'Payment was cancelled. No money has been taken.' and no order was completed. | Pass | 27/05/2026 |
 | Registration | Created a new user account using the registration form. | Account registration completes and the user receives the expected feedback. | Registration completed and the expected user feedback was shown. | Pass | 27/05/2026 |
 | Login/logout | Logged in with valid credentials and then logged out. | User can access the dashboard after login and is signed out after logout. | Login and logout worked as expected. | Pass | 27/05/2026 |
 | Profile edit | Updated profile details from the account dashboard. | Saved profile changes persist and success feedback is shown. | Profile changes saved successfully and confirmation feedback appeared. | Pass | 27/05/2026 |
 | Order history | Opened the order history page from the dashboard. | Previous completed orders are listed with order details available. | Order history displayed completed orders and detail links correctly. | Pass | 27/05/2026 |
-| Review | Submitted a product review while logged in. | Review is saved and appears on the product detail page. | Review submitted successfully and displayed on the product page. | Pass | 27/05/2026 |
+| Review | Submitted a product review while logged in. | Review is saved and appears on the product detail page. | Review submission worked correctly after removing unnecessary demo warning. | Pass | 27/05/2026 |
 | Mobile responsive check | Checked key pages on a mobile viewport. | Layout remains usable with readable text, accessible navigation and no content overflow. | Main pages remained usable and responsive on mobile. | Pass | 27/05/2026 |
 
 ---
@@ -277,4 +277,3 @@ babyrocks/
 **© 2025 BabyRocks — Created by Victor Ramirez**
 
 ```
-

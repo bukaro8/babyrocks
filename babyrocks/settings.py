@@ -48,6 +48,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 USE_X_FORWARDED_HOST = True
 
+# PayPal checkout popups require popup access across origins.
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
+
 # Do NOT force HTTPS yourself. Traefik handles it.
 SECURE_SSL_REDIRECT = False
 
