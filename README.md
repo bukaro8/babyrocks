@@ -14,6 +14,42 @@ GitHub repository: https://github.com/bukaro8/babyrocks
 
 ---
 
+## Deployment
+
+Live deployed URL: https://babyrocks.vicstack.uk/
+
+This project is deployed using Coolify.
+
+Required production environment variables:
+
+```text
+SECRET_KEY
+DEBUG=False
+ALLOWED_HOSTS
+DATABASE_URL
+EMAIL_HOST
+EMAIL_PORT
+EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS
+DEFAULT_FROM_EMAIL
+PAYPAL_CLIENT_ID
+PAYPAL_SECRET
+```
+
+Deployment steps:
+
+1. Push latest code to GitHub
+2. Connect repo to Coolify
+3. Configure environment variables
+4. Configure production database using DATABASE_URL
+5. Run migrations
+6. Collect static files
+7. Verify live URL loads
+8. Retest ecommerce journey
+
+---
+
 ## 💻 Deployment (Run Locally)
 
 ```bash
