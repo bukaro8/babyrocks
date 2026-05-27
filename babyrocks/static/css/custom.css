@@ -160,6 +160,7 @@ ul.thumb li img {
   border-color: #e3e9e5;
 }
 
-.filter-group .icon-control {
-  color: #28a745;
+.filter-group .card-header a .icon-control.fa.fa-chevron-down,
+.filter-group .card-header a .icon-control.fa.fa-chevron-down::before {
+  color: #28a745 !important;
 }
