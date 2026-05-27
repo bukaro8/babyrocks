@@ -109,6 +109,8 @@
 						</p>
 
 
+						<div id="payment-message" class="alert d-none" role="alert"></div>
+
 						<div id="paypal-button-container">
 							<!-- PayPal Button Will Load -->
 						</div>
@@ -146,6 +148,12 @@
     }
     return cookieValue;
 }
+
+	function showPaymentMessage(message, type) {
+		const messageBox = document.getElementById("payment-message");
+		messageBox.textContent = message;
+		messageBox.className = "alert alert-" + type;
+	}
 
 	var amount = "{{ grand_total }}"
 	var url = "{% url 'payments' %}"
@@ -193,17 +201,36 @@
 							payment_method: payment_method,
 							status: details.status,
 						}),
-					})
-				  .then((response) => response.json())
-				  .then((data) => {
-						window.location.href = redirect_url + '?order_number='+data.order_number+'&payment_id='+data.transID;
-					});
-				}
-			});
-		}
+						})
+					  .then((response) => {
+							if (!response.ok) {
+								throw new Error("Order recording failed");
+							}
+							return response.json();
+						})
+					  .then((data) => {
+							if (!data.order_number || !data.transID) {
+								throw new Error("Order confirmation data missing");
+							}
+							window.location.href = redirect_url + '?order_number='+data.order_number+'&payment_id='+data.transID;
+						})
+					  .catch(() => {
+							showPaymentMessage("Payment completed, but the order confirmation could not be created. Please contact support.", "danger");
+						});
+					}
+				});
+			},
+
+			onCancel: function(data) {
+				showPaymentMessage("Payment was cancelled. No money has been taken.", "warning");
+			},
+
+			onError: function(err) {
+				showPaymentMessage("There was a problem processing the payment. Please try again.", "danger");
+			}
 
 
-	}).render('#paypal-button-container');
+		}).render('#paypal-button-container');
 </script>
 
 {% endblock %}
