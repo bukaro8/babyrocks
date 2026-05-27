@@ -9,6 +9,9 @@
 A responsive, full-stack e-commerce application built with **Django**, featuring product browsing, categories, variations, reviews, user accounts, cart management, ordering, and an admin dashboard.  
 Designed to demonstrate clean architecture, scalability, and professional documentation.
 
+Live site: https://babyrocks.vicstack.uk/
+GitHub repository: https://github.com/bukaro8/babyrocks
+
 ---
 
 ## 💻 Deployment (Run Locally)
@@ -216,5 +219,4 @@ babyrocks/
 **© 2025 BabyRocks — Created by Victor Ramirez**
 
 ```
-
 
