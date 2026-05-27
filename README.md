@@ -77,7 +77,7 @@ python manage.py createsuperuser
 
 # Start development server
 python manage.py runserver
-````
+```
 
 ---
 
@@ -275,5 +275,3 @@ babyrocks/
 ---
 
 **© 2025 BabyRocks — Created by Victor Ramirez**
-
-```
